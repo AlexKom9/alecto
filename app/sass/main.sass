@@ -1,0 +1,80 @@
+//*********************************************
+//		Assets
+//*********************************************
+@import "_base/reset"
+@import "_base/variables"
+@import "_base/fonts"
+@import "_base/grid"
+
+//import my blocks
+@import "start"
+@import "header"
+@import "about"
+@import "right-sect"
+@import "left-sect"
+
+
+.l
+    &-page
+        font-family: "Raleway"
+    &-wrap
+        max-width: 1920px
+        min-width: 320px
+        margin: 0 auto
+        overflow: hidden
+    &-container
+        +container
+    &-btn
+        width: 183px
+        height: 47px
+        font-size: 14px
+        text-align: center
+        background-color: $accent-color
+        line-height: 47px
+        border-radius: 23.5px
+        display: inline-block
+        color: #fff
+        &--start
+            @extend .l-btn
+            background-color: transparent
+            border: solid 2px #fff
+    &-title
+        margin: 110px
+        text-align: center
+        &__head
+            font-size: 60px
+            color: $title-color
+        &__devider
+            width: 34px
+            height: 2px
+            background-color: $accent-color
+            display: inline-block
+            margin: 40px 0
+        &__descr
+            font-size: 18px
+            color: $text-color
+
+        
+
+
+
+
+
+
+.con
+    // height: 300px
+    display: flex
+    justify-content: center
+    // flex-direction: column
+    align-content: center
+.con1
+    width: 100px
+    height: 100px
+    background-color: green
+.con2
+    width: 100px
+    height: 100px
+    background-color: gold
+
+    
+
