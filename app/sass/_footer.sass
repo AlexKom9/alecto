@@ -1,0 +1,58 @@
+.footer
+	// position: relative
+	// padding-top: 72px
+	overflow: hidden
+	text-align: center
+	// display: flex
+	// justify-content: center
+	.l-container
+		position: relative
+	&__inner
+		// position: relative
+		margin-top: 7.2rem
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: baseline
+		z-index: 10
+		+r(920)
+			margin-top: 4.2rem
+
+
+	&__copy
+		line-height: 30px
+		font-size: 18px
+		color: $text-color
+		&-i
+			margin-right: 20px
+			float: left
+			.a-icon
+				width: 30px
+				height: 30px
+				path
+					fill: $accent-color
+		+r(920)
+			position: absolute
+			bottom: 0
+	&__bgi
+		display: inline-block
+		margin-top: -50%
+		width: 80%
+		top: 0
+		left: 0
+		opacity: 0.03
+		path
+			fill: text-color
+	+r(920)		
+		&__nav
+			width: 100%
+
+.nav--footer
+	// width: 100%
+	+r(920)
+		display: flex
+		justify-content: space-between
+	.nav__item
+		color: $text-color
+		+r(920)
+			margin-right: 0

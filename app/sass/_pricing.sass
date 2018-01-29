@@ -1,0 +1,52 @@
+.pricing
+	background-color: $main-bgc
+	&__prices
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		+r(1200)
+			justify-content: space-around
+	&__item
+		padding-bottom: 11rem
+		+col(3,30px)
+		+r(1200)
+			+col(6,150px)
+		+r(767)
+			+col(11)
+.price
+	background-color: #fff
+	&__head
+		padding: 5.4rem 0 5.7rem 3.8rem 
+		border-bottom: 2px solid $main-bgc
+		// background-color: #fff
+		&-price
+			font-size: 6rem
+			font-weight: 200
+			margin-bottom: 2.7rem
+			color: $accent-color
+		&-descr
+			font-size: 1.8rem
+			color: rgba($text-color, .4)
+
+
+	&__body
+		font-size: 1.8rem
+		line-height: 2.67
+		padding: 6.7rem 5rem 7.5rem 3.4rem
+		+r(1366)
+			padding: 3.8rem
+		color: $text-color
+	&__footer
+		height: 75px
+		background-color: $accent-color
+		font-size: 1.8rem
+		text-transform: uppercase
+		letter-spacing: 5px
+		padding: 0 35px
+		color: #fff
+		line-height: 75px
+		display: flex
+		justify-content: space-between
+		&:hover
+			cursor: pointer
+

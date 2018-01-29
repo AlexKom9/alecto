@@ -1,29 +1,49 @@
 .about
-    &__inner
+    &__items
         display: flex
-        justify-content: space-between
+        justify-content: center 
         flex-wrap: wrap
     &__item
         +col(3)
+        +r(1024)
+            +col(6)
+        +r(612)
+            +col(10)
     &__btn
-        margin: 170px auto 90px
+        text-align: center
+        margin-bottom: 11rem
 .about-item
     text-align: center
+    margin-bottom: 10rem
     &__circle
-        width: 184px
-        height: 184px
+        width: 18.4rem
+        height: 18.4rem
         border-radius: 50%
         background-color: $main-bgc
         color: $text-color
         display: inline-block
         margin: 0 auto
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: all .4s
     &__title
-        margin-top: 86px
-        font-size: 30px
-        line-height: 96px
+        margin-top: 8.6rem
+        font-size: 3rem
+        line-height: 9.6rem
     &__descr
-        margin-top: 48px
-        font-size: 18px
-        line-height: 30px
+        margin-top: 4.8rem
+        font-size: 1.8rem
+        line-height: 3rem
         color: $text-color
-    
+    &__icon
+        path
+            transition: fill 0.4s
+    &:hover
+        cursor: pointer
+        .about-item__circle
+            background-color: $accent-color
+        .about-item__icon
+            path
+                fill: #fff
+

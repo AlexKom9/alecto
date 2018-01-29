@@ -1,0 +1,55 @@
+.slider
+	background: url(../img/slide-bgi.jpg)
+	background-size: cover
+	background-position: 50% 50%
+	max-height: 700px 
+	min-height: 500px
+	height: 100vh
+	display: flex
+	justify-content: center
+	flex-direction: column
+	text-align: center
+	color: #fff
+	&__inner
+		// position: relative
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__next, &__prev
+		// position: absolute
+		padding-left: 30px
+	&__next
+		// right: 0
+		svg
+			fill: #fff 
+	&__prev
+		// left: 0
+		transform: rotate(180deg)
+		svg
+			fill: #fff
+	&__item
+		display: flex
+		justify-content: center
+		flex-direction: column
+		align-items: center
+	&__face
+		width: 104px
+		height: 104px
+		border-radius: 50%
+		margin-bottom: 50px
+
+	&__title
+		font-size: 30px
+		// line-height: 96px
+		margin-bottom: 4rem
+		span
+			color: $accent-color
+	&__descr
+		font-size: 18px
+		// line-height: 96px
+		color: $text-color
+		margin-bottom: 8rem 
+		span
+			font-weight: 700
+	&__circles
+		display: inline-block

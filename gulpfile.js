@@ -1,5 +1,5 @@
 let gulp = require('gulp'),
-    server = require('gulp-server-livereload'),
+    // server = require('gulp-server-livereload'),
     sass = require('gulp-sass'),
     prefix = require('gulp-autoprefixer'),
     useref = require('gulp-useref'),
@@ -7,16 +7,17 @@ let gulp = require('gulp'),
     csso = require('gulp-csso'),
     uglify = require('gulp-uglifyes'),
     imagemin = require('gulp-imagemin'),
-    clean = require('rimraf');
+    clean = require('rimraf'),
+    browserSync = require('browser-sync').create();
 
 
-gulp.task("start", function(){
-    gulp.src("./app")
-        .pipe(server({
-            open: true,
-            livereload: true
-        }))
-})
+// gulp.task("start", function(){
+//     gulp.src("./app")
+//         .pipe(server({
+//             open: true,
+//             livereload: true
+//         }))
+// });
 
 gulp.task("styles", function(){
     gulp.src("./app/sass/**/*.sass")
@@ -25,7 +26,8 @@ gulp.task("styles", function(){
             versions: ['last 20 versions']
         }) )
         .pipe( gulp.dest('./app/css') )
-})
+        .pipe(browserSync.stream());
+});
 
 gulp.task("images", function(){
     gulp.src("./app/img/**/*")
@@ -35,11 +37,11 @@ gulp.task("images", function(){
             optimizationLevel: 5
         }))
         .pipe(gulp.dest("./build/img"))
-})
+});
 
 gulp.task("clean", function(cb){
     clean('./build', cb);
-})
+});
 
 gulp.task("build", ["clean", "images"], function(){
     gulp.src("./app/index.html")
@@ -47,10 +49,23 @@ gulp.task("build", ["clean", "images"], function(){
         .pipe( gulpIf('*.css', csso()) )
         .pipe( gulpIf('*.js', uglify()) )
         .pipe(gulp.dest('./build'))
-})
+});
 
 gulp.task("watch", function(){
     gulp.watch("./app/sass/**/*.sass", ["styles"]);
-})
+});
 
-gulp.task("default", ["start", "watch"]);
+// Static Server + watching scss/html files
+gulp.task('serve', ['styles'], function () {
+
+    browserSync.init({
+        server: "./app"
+    });
+
+    gulp.watch("app/sass/**/*.sass", ['styles']);
+    gulp.watch("app/*.html").on('change', browserSync.reload);
+});
+
+
+
+gulp.task("default", ["serve"]);

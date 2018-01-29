@@ -8,7 +8,7 @@ $lg: "(min-width: 1200px)"
 $xlg: "(min-width: 1500px)"
 
 $cols: 12
-$gutter: 40px
+// $gutter: 40px
 // $col: calc(100% / $cols)
 // $col: 5.2%
 
@@ -20,17 +20,34 @@ $gutter: 40px
     width: 100%
     padding: 0 15px
   @media #{$sm}
-    width: 750px
+    // width: 750px
+    width: 90%
   @media #{$md}
     width: 970px
   @media #{$lg}
     width: 1170px
+  @media #{$xlg}
+    width: 1460px
+    // padding: 0
 
-
-=container($align:space-between, $wrap:wrap)
+=container
   @extend %container
-  // justify-content: $align
-  // flex-wrap: $wrap
 
-=col($num)
+=col($num, $gutter: 40px)
   width: calc( (((100% - (#{$gutter} * (#{$cols} - 1))) / #{$cols}) * #{$num}) + ( #{$gutter} * (#{$num} - 1)) )
+
+=r($width)
+  @media only screen and (max-width: $width+ "px")
+    @content
+
+=rmin($width)
+  @media only screen and (min-width: $width+ "px")
+    @content
+
+=clearfix
+  &::after
+    content: ''
+    // background-color: red
+    // height: 10px
+    display: block
+    clear: both

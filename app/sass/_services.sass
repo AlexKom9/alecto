@@ -1,0 +1,53 @@
+.services
+	background-color: $main-bgc
+	&__body
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		padding-bottom: 9.6rem
+		+r(1009)
+			justify-content: center
+
+	&__item
+		+col(6,80px)
+		+r(1200)
+			+col(6,0px)
+		+r(1009)
+			+col(8)
+		+r(767)
+			+col(11)
+		margin-bottom: 7rem
+
+
+
+.serv
+	// margin-right: 
+	&__circle
+		float: left
+		width: 9.4rem
+		height: 9.4rem
+		border-radius: 50%
+		background-color: #fff
+		margin-right: 50px
+		display: flex
+		justify-content: center
+		align-items: center
+		+r(767)
+			float: none
+	&__title
+		// background-color: green
+		font-size: 6rem
+		line-height: 9.5rem
+		color: $title-color
+		// display: flex
+		// flex-wrap: nowrap
+		// justify-content: space-between
+	&__descr
+		font-size: 1.8rem
+		line-height: 4.8rem
+		margin-left: 14.4rem
+		letter-spacing: 0.4
+		color: $text-color
+		+r(767)
+			margin-left: 0
+	+clearfix

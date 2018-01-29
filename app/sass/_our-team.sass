@@ -1,0 +1,36 @@
+.team
+	font-size: 0
+	&__tiles
+	&__row
+		display: flex
+		flex-wrap: wrap
+	&__tile
+		width: 20%
+		display: inline-block
+		position: relative
+		+r(480)
+			width: 50%
+		&-wrap
+			display: block
+			width: 100%
+			height: 100%
+			position: absolute
+			background-color: rgba($accent-color,.7)
+			font-weight: 300
+			color: #fff
+			display: flex
+			align-items: center
+			justify-content: center
+			opacity: 0
+			transition: all .4s;
+			font-size: 36px
+			text-align: center
+			&:hover
+				opacity: 1
+
+
+	&__img
+		// height: 20%
+		width: 100%
+		object-fit: cover
+

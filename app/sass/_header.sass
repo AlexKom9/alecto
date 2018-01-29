@@ -1,21 +1,55 @@
 .header
-    margin-top: 50px
-    position: absolute
-    top: 0
-    left: 0
-    z-index: 100
-    color: #fff
-    width: 100%
-    &__inner
-        width: 100%
-        display: flex
-        justify-content: space-between
+	margin-top: 5rem
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 100
+	color: #fff
+	width: 100%
+	+r(710)
+		margin-top: 2rem 
+	&__inner
+		+r(710)
+			flex-direction: column
+			align-items: center
+			justify-content: center
+		// +r(580)
+		// 	flex-direction: row
+		// 	flex-wrap: wrap
+		// 	justify-content: space-between
+		&__logo
+			float: left
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: baseline
+	&__logo
+		transform: translateY(20%)
+		margin-bottom: 20px
+	&__nav
+		+r(580)	
+			width: 100%
+	.nav
+		+r(580)
+			display: flex
+			// flex-wrap: wrap
+			justify-content: space-between
+			align-items: baseline
+			width: 100%
+		&__item
+			+r(580)	
+				margin-right: 0
 
-.nav__item
-    margin-right: 62px
-    color: #fff
-    text-transform: uppercase
-    font-weight: 700 
-    &:last-child
-        margin-right: 0
-        
+.nav
+	&__item
+		margin-right: 6.2rem
+		color: #fff
+		text-transform: uppercase
+		font-size: 14px
+		font-weight: 700 
+		&:last-child
+			margin-right: 0
+	&__mag-i
+		transform: translateY(40%)
+		path
+			fill: #fff
