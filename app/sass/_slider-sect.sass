@@ -11,32 +11,35 @@
 	text-align: center
 	color: #fff
 	&__inner
-		// position: relative
-		display: flex
-		justify-content: space-between
-		align-items: center
-	&__next, &__prev
-		// position: absolute
-		padding-left: 30px
-	&__next
-		// right: 0
-		svg
-			fill: #fff 
-	&__prev
-		// left: 0
-		transform: rotate(180deg)
-		svg
-			fill: #fff
+		position: relative
+		padding: 0 35px
+	&__arrow
+		position: absolute
+		top: 50%
+		z-index: 100
+		&--next
+			transform: translateY(-50%)
+			right: 0
+			svg
+				fill: #fff 
+		&--prev
+			left: 0
+			transform: rotate(180deg) translateY(50%)
+			svg
+				fill: #fff
 	&__item
-		display: flex
+		display: flex !important
 		justify-content: center
 		flex-direction: column
 		align-items: center
+		padding: 20px
+		outline: none
 	&__face
 		width: 104px
 		height: 104px
 		border-radius: 50%
 		margin-bottom: 50px
+		// margin: 0 auto
 
 	&__title
 		font-size: 30px
@@ -51,5 +54,19 @@
 		margin-bottom: 8rem 
 		span
 			font-weight: 700
-	&__circles
-		display: inline-block
+
+
+
+
+.circles
+    &__c
+        display: inline-block
+        width: 10px !important
+        height: 10px !important
+        border-radius: 50%
+        border: 2px solid #fff
+        margin-right: 10px
+        &:last-child
+            margin-right: 0px
+        &--active
+            background-color: #fff
